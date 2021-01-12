@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.17.1"
   },
   "repository": {
     "type": "git",
@@ -19,5 +19,6 @@
   "bugs": {
     "url": "https://github.com/ztayut2tx/xpress-note/issues"
   },
-  "homepage": "https://github.com/ztayut2tx/xpress-note#readme"
+  "homepage": "https://github.com/ztayut2tx/xpress-note#readme",
+  "devDependencies": {}
 }
