@@ -2,23 +2,24 @@
 const notes = require ("express").Router();
 const fs = require ("fs");
 
-dataBase = require("../db/db.json");
-// Routes
+db = require("../db/db.json");
+
+//Routes
+
+//Route to see stored notes
 notes.get("/api.notes.html", function(req, res) {
     db = JSON.parse(fs.readFileSync("./db/db.json"))
     res.json(db);
 });
-//generates unique id along with entered text
+//Route to create new note, and store in db.json
 notes.post("/api/notes", function (req, res) {
-    var textInput = {
-        id: Math.floor(Math.random() *150),
-        title: req.body.title,
-        text: req.body.text
-    }
-    db.push(textInput);
-   fs.writeFileSync("./db/db.json", JSON.stringify(db), function() {
-       res.json(db);
-   });
+    let saveList = JSON.parse(fs.readFileSync("./db/db.json", "utf-8"));
+    let addNote = req.body;
+
+    saveList.push(addNote);
+
+    fs.writeFileSync("./db/db.json", JSON.stringify(saveList));
+    res.json(saveList)
 });
     
 //updates database if note is deleted
