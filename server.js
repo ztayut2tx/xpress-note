@@ -1,10 +1,11 @@
+// dependencies
 const express = require("express");
 const fs = require ("fs");
 
 
 var app = express();
 var PORT = 3000;
-
+// required route files
 var apiRoute = require("./routes/apiroute.js");
 var htmlroute = require("./routes/htmlroute.js");
 
