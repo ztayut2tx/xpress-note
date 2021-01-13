@@ -13,7 +13,7 @@ notes.get("/api.notes.html", function(req, res) {
 });
 //Route to create new note, and store in db.json
 notes.post("/api/notes", function (req, res) {
-    let saveList = JSON.parse(fs.readFileSync("./db/db.json", "utf-8"));
+    let saveList = JSON.parse(fs.readFileSync("./db/db.json", "utf8"));
     let addNote = req.body;
 
     saveList.push(addNote);
